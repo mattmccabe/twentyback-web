@@ -1,65 +1,55 @@
 # Brand Name Selection
 
-## Current Brand Name: Aiva
+## Selected Brand Name: TwentyBack
 
-Based on the PLAN.md file, the brand name "Aiva" appears to already be established and used throughout the examples. Let's evaluate this name and consider alternatives.
+The brand name "TwentyBack" has been selected as the optimal choice for this automation platform targeting solo service professionals.
 
-## Evaluation of "Aiva"
+## Evaluation of "TwentyBack"
 
 ### Strengths:
-- **Short and memorable** - Easy to say and spell
-- **AI connection** - Starts with "AI" which clearly indicates the technology
-- **Professional sound** - Not too casual or gimmicky
-- **Available domains** - Likely good domain availability
-- **Gender-neutral** - Appeals to diverse user base
+- **Clear value connection** - Name directly relates to "getting time back"
+- **Quantifiable benefit** - "Twenty" reinforces the "10-20 hours per week" value proposition
+- **Professional sound** - Business-appropriate and credible
+- **Memorable and brandable** - Unique positioning in the market
+- **Cross-industry appeal** - Works across all service professional sectors
 
-### Potential Concerns:
-- **Generic AI feel** - Many AI products use "AI" prefix
-- **Pronunciation clarity** - Could be pronounced "EYE-va" or "AH-ee-va"
+### Strategic Advantages:
+- **Differentiated positioning** - Moves beyond crowded "AI assistant" space
+- **Benefit-focused branding** - Name itself communicates the core value
+- **Time-recovery messaging** - Aligns perfectly with target audience pain points
 
-## Alternative Brand Name Options
+## Alternative Brand Name Analysis
 
-### Option 1: TaskMate
-- **Pros:** Clear function, friendly, easy to remember
-- **Cons:** Generic, doesn't emphasize AI technology
+### Previously Considered: Aiva
+- **Pros:** AI connection, professional sound, short and memorable
+- **Cons:** Generic AI feel, doesn't communicate specific benefit, crowded market space
 
-### Option 2: FlowBot
-- **Pros:** Suggests workflow automation, tech-forward
-- **Cons:** "Bot" might feel impersonal to service professionals
+### Other Alternatives Evaluated:
+- **TaskMate:** Generic, doesn't emphasize unique value
+- **FlowBot:** Impersonal feel for service professionals
+- **AdminAce:** Dated positioning, no technology indication
+- **ServiceSync:** Confusing with other sync tools
+- **ProFlow AI:** Too long, harder to brand
 
-### Option 3: AdminAce
-- **Pros:** Clearly positions as administrative helper, suggests expertise
-- **Cons:** Doesn't emphasize AI, might sound dated
+## Recommendation Rationale
 
-### Option 4: ServiceSync
-- **Pros:** Suggests coordination and service industry focus
-- **Cons:** Doesn't indicate AI technology, could be confused with other sync tools
+**TwentyBack is the optimal choice** because:
 
-### Option 5: ProFlow AI
-- **Pros:** Professional focus, workflow emphasis, clear AI indication
-- **Cons:** Longer name, might be harder to brand
-
-## Recommendation
-
-**Stick with "Aiva"**
-
-After evaluation, "Aiva" remains the strongest choice because:
-
-1. **Already established** - The brand has momentum and recognition
-2. **Clear AI positioning** - Immediately communicates the technology
-3. **Professional yet approachable** - Balances business credibility with accessibility
-4. **Memorable and brandable** - Short, distinctive, easy to build marketing around
-5. **Versatile** - Works well across different service industries
+1. **Perfect value alignment** - Name reinforces the core "10-20 hours per week" benefit
+2. **Unique market positioning** - Creates differentiation from generic AI assistants
+3. **Professional credibility** - Appeals to business owners seeking time recovery
+4. **Memorable and brandable** - Easy to build marketing campaigns around
+5. **Benefit-driven** - Immediately communicates what customers get
 
 ## Brand Positioning Statement
 
-"Aiva is the AI assistant designed specifically for solo service professionals who want to automate their administrative work and focus on growing their business."
+"TwentyBack is the automation platform designed specifically for solo service professionals who want to reclaim their time and focus on growing their business."
 
 ## Tagline Options
 
-- "Your AI Business Partner"
+- "Get Your Time Back"
 - "Automate. Focus. Grow."
-- "The AI That Works While You Work"
-- "Smart Automation for Service Professionals"
+- "Twenty Hours Back Every Month"
+- "Time Recovery for Service Professionals"
 
-**Recommended Tagline:** "Automate. Focus. Grow." - Simple, action-oriented, and captures the complete value journey.
+**Recommended Tagline:** "Automate. Focus. Grow." - Simple, action-oriented, and captures the complete value journey while maintaining consistency with existing brand strategy.

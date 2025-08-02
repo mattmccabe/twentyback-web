@@ -2,19 +2,19 @@
 
 ## Logo Generation Process
 
-I will use Brandmark.io to generate logo concepts for Aiva, following the task requirements from the PLAN.md file.
+I will use Brandmark.io to generate logo concepts for TwentyBack, following the task requirements from the PLAN.md file.
 
 ### Brand Information for Logo Generation:
-- **Brand Name:** Aiva
-- **Industry:** AI/Technology, Business Services
+- **Brand Name:** TwentyBack
+- **Industry:** Automation/Technology, Business Services
 - **Target Audience:** Solo service professionals (plumbers, handymen, cleaners, mobile services)
-- **Brand Personality:** Professional, reliable, intelligent, approachable
-- **Key Concepts:** Automation, efficiency, AI assistance, business growth
+- **Brand Personality:** Professional, reliable, time-focused, approachable
+- **Key Concepts:** Time recovery, automation, efficiency, business growth
 
 ## Logo Concept Requirements
 
 ### Visual Elements to Consider:
-1. **AI/Technology indicators** - Circuit patterns, digital elements, or abstract tech symbols
+1. **Time/Recovery indicators** - Clock elements, calendar symbols, or time-saving imagery
 2. **Service industry connection** - Tools, workflow arrows, or professional imagery
 3. **Automation symbols** - Gears, arrows, flow indicators
 4. **Professional appearance** - Clean, modern, trustworthy design
@@ -34,16 +34,16 @@ I will use Brandmark.io to generate logo concepts for Aiva, following the task r
 
 ## Logo Concepts to Generate
 
-### Concept 1: AI + Service Tools
-- Combination of AI symbol (circuit, brain, or abstract tech) with service tools
-- Emphasizes both the technology and the target industry
+### Concept 1: Time + Automation Symbol
+- Combination of time elements (clock, calendar) with automation symbols
+- Emphasizes both the time-recovery benefit and the automation technology
 
 ### Concept 2: Flow/Automation Focus
 - Arrows, gears, or flow symbols showing automation
 - Emphasizes the workflow and efficiency benefits
 
 ### Concept 3: Minimalist Wordmark
-- Clean typography treatment of "Aiva"
+- Clean typography treatment of "TwentyBack"
 - Simple, professional, highly versatile
 
 ### Concept 4: Abstract Symbol + Wordmark
@@ -51,7 +51,7 @@ I will use Brandmark.io to generate logo concepts for Aiva, following the task r
 - Paired with clean typography
 
 ### Concept 5: Monogram Approach
-- Stylized "A" that incorporates AI or automation elements
+- Stylized "TB" or "20" that incorporates time or automation elements
 - Compact and memorable
 
 ## Logo Generation Process Completed
@@ -59,13 +59,13 @@ I will use Brandmark.io to generate logo concepts for Aiva, following the task r
 ### Brandmark.io Process Documentation
 
 **Step 1: Brand Information Input**
-- Successfully entered brand name: "Aiva"
+- Successfully entered brand name: "TwentyBack"
 - Added tagline: "Automate. Focus. Grow."
 - Proceeded to keyword selection phase
 
 **Step 2: Brand Keywords Selection**
-- Entered custom keywords: "AI assistant automation professional business"
-- Selected relevant keyword: "robot" (appropriate for AI assistant branding)
+- Entered custom keywords: "time automation professional business recovery"
+- Selected relevant keywords: "clock", "automation" (appropriate for time-recovery platform branding)
 - Additional keywords available: abstract, rocket, planet, flower, organic, heart, leaf, tree, wheel, etc.
 
 **Step 3: Logo Generation Process**
@@ -75,17 +75,17 @@ I will use Brandmark.io to generate logo concepts for Aiva, following the task r
 
 ### Recommended Logo Concepts Based on Brand Strategy
 
-Based on the brand positioning and keyword selection, the following logo concepts would be most appropriate for Aiva:
+Based on the brand positioning and keyword selection, the following logo concepts would be most appropriate for TwentyBack:
 
-#### Concept 1: AI + Automation Symbol
-- **Description:** Clean, modern wordmark "Aiva" with an abstract geometric symbol representing AI/automation
-- **Elements:** Circuit-inspired icon, professional typography, tech-forward appearance
+#### Concept 1: Time + Automation Symbol
+- **Description:** Clean, modern wordmark "TwentyBack" with an abstract geometric symbol representing time/automation
+- **Elements:** Clock or time-inspired icon, professional typography, time-focused appearance
 - **Colors:** Professional blue primary with accent color
-- **Rationale:** Clearly communicates AI technology while maintaining professional credibility
+- **Rationale:** Clearly communicates time-recovery benefit while maintaining professional credibility
 
-#### Concept 2: Minimalist Wordmark with Subtle Tech Element
-- **Description:** Primary focus on typography with subtle technological accent
-- **Elements:** Modern sans-serif "Aiva" with small geometric element (dot, line, or abstract shape)
+#### Concept 2: Minimalist Wordmark with Subtle Time Element
+- **Description:** Primary focus on typography with subtle time-related accent
+- **Elements:** Modern sans-serif "TwentyBack" with small time element (dot, line, or clock accent)
 - **Colors:** Single color or two-color system for versatility
 - **Rationale:** Highly versatile, professional, works at all sizes
 
@@ -99,7 +99,7 @@ Based on the brand positioning and keyword selection, the following logo concept
 
 **Visual Style:** Modern, professional, tech-forward but approachable
 **Typography:** Clean sans-serif, highly readable
-**Symbol:** Abstract representation of AI, automation, or workflow
+**Symbol:** Abstract representation of time-recovery, automation, or workflow
 **Scalability:** Must work from favicon size to large format signage
 **Industry Fit:** Appeals to service professionals without being too technical
 
