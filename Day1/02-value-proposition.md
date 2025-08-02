@@ -2,21 +2,21 @@
 
 ## Primary Value Proposition
 
-**"Aiva is the AI assistant that gives solopreneurs their time back by automating quotes, scheduling, and customer follow-ups, so you can focus on what you do best while growing your business 10-20 hours per week."**
+**"TwentyBack gives solopreneurs their time back by automating quotes, scheduling, and customer follow-ups, so you can focus on what you do best while growing your business 10-20 hours per week."**
 
 ## Alternative Variations
 
 ### Variation 1 (Time-Focused)
-"Reclaim 10-20 hours every week with Aiva, the AI assistant that handles your quotes, scheduling, and customer communications while you focus on the work that pays."
+"Reclaim 10-20 hours every week with TwentyBack, the automation platform that handles your quotes, scheduling, and customer communications while you focus on the work that pays."
 
 ### Variation 2 (Revenue-Focused)
-"Aiva helps solo service professionals capture more customers and increase revenue by automating the admin work that keeps you from growing your business."
+"TwentyBack helps solo service professionals capture more customers and increase revenue by automating the admin work that keeps you from growing your business."
 
 ### Variation 3 (Problem-Solution)
-"Stop losing customers to slow responses and missed follow-ups - Aiva's AI assistant handles your business communications 24/7 so you never miss an opportunity."
+"Stop losing customers to slow responses and missed follow-ups - TwentyBack's automation platform handles your business communications 24/7 so you never miss an opportunity."
 
 ### Variation 4 (Professional Growth)
-"Transform your solo service business into a professional operation with Aiva's AI assistant managing quotes, scheduling, and customer relationships automatically."
+"Transform your solo service business into a professional operation with TwentyBack's automation platform managing quotes, scheduling, and customer relationships automatically."
 
 ## Rationale for Primary Choice
 

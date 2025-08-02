@@ -1,6 +1,6 @@
 # Day 1 Completion Summary: Define the Message & Brand
 
-This folder contains the completed Day 1 tasks from the 3-Day MVP Marketing Site checklist, focused on defining the message and brand for Aiva, an AI assistant targeting solopreneurs and mobile service professionals.
+This folder contains the completed Day 1 tasks from the 3-Day MVP Marketing Site checklist, focused on defining the message and brand for TwentyBack, an automation platform targeting solopreneurs and mobile service professionals.
 
 ## Completed Tasks Overview
 
@@ -18,7 +18,7 @@ Each profile includes demographics, pain points, goals, and behavioral character
 **File:** [02-value-proposition.md](./02-value-proposition.md)
 
 **Primary Value Proposition:**
-*"Aiva is the AI assistant that gives solopreneurs their time back by automating quotes, scheduling, and customer follow-ups, so you can focus on what you do best while growing your business 10-20 hours per week."*
+*"TwentyBack gives solopreneurs their time back by automating quotes, scheduling, and customer follow-ups, so you can focus on what you do best while growing your business 10-20 hours per week."*
 
 Includes 4 alternative variations and detailed rationale for the primary choice, emphasizing quantifiable time savings and core business benefits.
 
@@ -35,16 +35,16 @@ Identified 5 critical pain points with corresponding positive outcomes:
 ### ✅ Task 4: Landing Page Headlines
 **File:** [04-landing-page-headlines.md](./04-landing-page-headlines.md)
 
-**Primary Headline:** *"Reclaim 10 Hours a Week. Let Aiva Run the Back Office."*
+**Primary Headline:** *"Reclaim 10 Hours a Week. Let TwentyBack Handle the Back Office."*
 
 Generated 5 headline options with supporting subheadlines, focusing on time recovery, business growth, professional transformation, revenue impact, and simplicity. Includes detailed rationale for the recommended primary choice.
 
 ### ✅ Task 5: Brand Name Selection
 **File:** [05-brand-name.md](./05-brand-name.md)
 
-**Recommendation:** Stick with "Aiva"
+**Recommendation:** TwentyBack
 
-Evaluated the existing brand name against 5 alternatives (TaskMate, FlowBot, AdminAce, ServiceSync, ProFlow AI). Aiva was confirmed as the strongest choice due to clear AI positioning, professional yet approachable feel, and existing brand momentum.
+Selected "TwentyBack" as the optimal brand name due to its direct connection to the core value proposition of "getting time back," unique market positioning beyond generic AI assistants, and strong alignment with the "10-20 hours per week" benefit messaging.
 
 **Recommended Tagline:** "Automate. Focus. Grow."
 
@@ -86,7 +86,7 @@ All three ICPs share common characteristics:
 - **Quantify benefits** - Specific, measurable outcomes build credibility
 
 ### Brand Positioning
-Aiva is positioned as the professional AI assistant specifically designed for solo service businesses, bridging the gap between overwhelming manual processes and scalable business operations.
+TwentyBack is positioned as the professional automation platform specifically designed for solo service businesses, bridging the gap between overwhelming manual processes and scalable business operations through time recovery.
 
 ## Next Steps (Day 2 & 3)
 - Use these brand foundations to build the actual website with AI tools
