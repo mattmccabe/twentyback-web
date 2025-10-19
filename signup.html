@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join TwentyBack Beta - Sign Up</title>
+    <meta name="description" content="Join the TwentyBack Beta and reclaim 10 hours a week. Sign up now for early access to our automation platform for service professionals.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body class="signup-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div>
+                <h1 class="logo">TwentyBack</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Signup Section -->
+    <section class="signup-container">
+        <div class="signup-box">
+            <div class="signup-header">
+                <h1>Join the TwentyBack Beta</h1>
+                <p>Be among the first to reclaim 10 hours a week with our automation platform</p>
+            </div>
+
+            <!-- Form Message Container -->
+            <div id="form-message" class="form-message"></div>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="signup-form" novalidate>
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        Email Address<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="your.email@example.com"
+                        required
+                        autocomplete="email"
+                    />
+                    <span class="field-error"></span>
+                </div>
+
+                <!-- First Name Field -->
+                <div class="form-group">
+                    <label for="firstName" class="form-label">
+                        First Name<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="firstName" 
+                        name="firstName" 
+                        class="form-input" 
+                        placeholder="John"
+                        required
+                        autocomplete="given-name"
+                    />
+                    <span class="field-error"></span>
+                </div>
+
+                <!-- Last Name Field -->
+                <div class="form-group">
+                    <label for="lastName" class="form-label">
+                        Last Name
+                    </label>
+                    <input 
+                        type="text" 
+                        id="lastName" 
+                        name="lastName" 
+                        class="form-input" 
+                        placeholder="Smith"
+                        autocomplete="family-name"
+                    />
+                    <span class="field-error"></span>
+                </div>
+
+                <!-- Company Field -->
+                <div class="form-group">
+                    <label for="company" class="form-label">
+                        Company Name
+                    </label>
+                    <input 
+                        type="text" 
+                        id="company" 
+                        name="company" 
+                        class="form-input" 
+                        placeholder="Your Company"
+                        autocomplete="organization"
+                    />
+                    <span class="field-error"></span>
+                </div>
+
+                <!-- Turnstile Widget -->
+                <div class="form-group">
+                    <div class="turnstile-container">
+                        <div id="turnstile-widget"></div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submit-button" class="submit-button" disabled>
+                    <span class="button-text">Join Beta</span>
+                    <span class="button-spinner"></span>
+                </button>
+
+                <!-- Privacy Note -->
+                <div class="privacy-note">
+                    By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    <!-- TODO: Replace '#' with actual Terms of Service and Privacy Policy URLs before launch -->
+                </div>
+            </form>
+
+            <!-- Back to Home Link -->
+            <div class="back-link">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>TwentyBack</h3>
+                    <p>Automate. Focus. Grow.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TwentyBack. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/signup.js"></script>
+</body>
+</html>
