@@ -2,7 +2,9 @@
 
 // Configuration
 const API_ENDPOINT = 'https://api.twentyback.com/api/auth/signup';
-const TURNSTILE_SITE_KEY = 'YOUR_SITE_KEY_HERE'; // This should be replaced with actual Turnstile site key
+// IMPORTANT: Replace with your actual CloudFlare Turnstile site key before deployment
+// See SIGNUP_CONFIGURATION.md for setup instructions
+const TURNSTILE_SITE_KEY = 'YOUR_SITE_KEY_HERE';
 
 // State management
 let turnstileToken = null;
@@ -38,6 +40,21 @@ function initializeForm() {
             'error-callback': onTurnstileError,
             'expired-callback': onTurnstileExpired,
         });
+    } else {
+        // Turnstile script hasn't loaded yet, wait for it
+        console.warn('Turnstile script not loaded yet, will retry...');
+        setTimeout(() => {
+            if (typeof turnstile !== 'undefined') {
+                turnstile.render('#turnstile-widget', {
+                    sitekey: TURNSTILE_SITE_KEY,
+                    callback: onTurnstileSuccess,
+                    'error-callback': onTurnstileError,
+                    'expired-callback': onTurnstileExpired,
+                });
+            } else {
+                console.error('Turnstile failed to load. Please check your internet connection and refresh the page.');
+            }
+        }, 2000);
     }
 }
 
@@ -97,9 +114,9 @@ function validateField(field) {
         }
     }
     
-    // Name validation (only letters, spaces, hyphens)
+    // Name validation (letters, spaces, hyphens, apostrophes, periods)
     if ((fieldName === 'firstName' || fieldName === 'lastName') && value) {
-        const nameRegex = /^[a-zA-Z\s-]+$/;
+        const nameRegex = /^[a-zA-Z\s\-'.]+$/;
         if (!nameRegex.test(value)) {
             isValid = false;
             errorMessage = 'Please enter a valid name';
