@@ -4,7 +4,7 @@
 const API_ENDPOINT = 'https://api.twentyback.com/api/auth/signup';
 // IMPORTANT: Replace with your actual CloudFlare Turnstile site key before deployment
 // See SIGNUP_CONFIGURATION.md for setup instructions
-const TURNSTILE_SITE_KEY = 'YOUR_SITE_KEY_HERE';
+const TURNSTILE_SITE_KEY = '0x4AAAAAAB7dgfag8YlmtqST';
 
 // State management
 let turnstileToken = null;
