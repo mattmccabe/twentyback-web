@@ -2,6 +2,8 @@
 
 // Configuration
 const API_ENDPOINT = 'https://api.twentyback.com/api/auth/resend-verification';
+const BUTTON_RESET_DELAY = 3000; // 3 seconds
+const TOAST_DISPLAY_DURATION = 5000; // 5 seconds
 
 // State management
 let isResending = false;
@@ -37,16 +39,27 @@ function initializePage() {
 }
 
 /**
- * Get user email from URL parameters or localStorage
+ * Get user email from localStorage or URL parameters (fallback)
  */
 function getUserEmail() {
-    // Try URL parameters first
-    const urlParams = new URLSearchParams(window.location.search);
-    let email = urlParams.get('email');
+    // Try localStorage first (more secure)
+    let email = localStorage.getItem('userEmail');
     
-    // If not in URL, try localStorage
+    // Fallback to URL parameters if localStorage not available
     if (!email) {
-        email = localStorage.getItem('userEmail');
+        const urlParams = new URLSearchParams(window.location.search);
+        email = urlParams.get('email');
+        
+        // Store in localStorage for future use
+        if (email) {
+            try {
+                localStorage.setItem('userEmail', email);
+                // Clean URL to remove email parameter
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } catch (e) {
+                // localStorage not available
+            }
+        }
     }
     
     return email;
@@ -104,7 +117,7 @@ async function handleResendVerification(event) {
             isResending = false;
             button.disabled = false;
             button.textContent = originalText;
-        }, 3000);
+        }, BUTTON_RESET_DELAY);
     }
 }
 
@@ -171,13 +184,13 @@ function showToastMessage(message, type = 'info') {
     // Add to page
     document.body.appendChild(toast);
     
-    // Remove after 5 seconds
+    // Remove after configured duration
     setTimeout(() => {
         toast.style.animation = 'slideOut 0.3s ease-out';
         setTimeout(() => {
             toast.remove();
         }, 300);
-    }, 5000);
+    }, TOAST_DISPLAY_DURATION);
 }
 
 /**

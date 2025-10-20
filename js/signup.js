@@ -267,15 +267,18 @@ async function handleApiResponse(response) {
         const formData = new FormData(form);
         const email = formData.get('email').trim();
         
-        // Store in localStorage
+        // Store in localStorage (preferred method)
+        let useUrlParam = false;
         try {
             localStorage.setItem('userEmail', email);
         } catch (e) {
-            // LocalStorage not available, will use URL parameter
+            // LocalStorage not available, will use URL parameter as fallback
+            useUrlParam = true;
         }
         
         // Redirect to success page
-        window.location.href = `success.html?email=${encodeURIComponent(email)}`;
+        // Only include email in URL if localStorage is not available
+        window.location.href = useUrlParam ? `success.html?email=${encodeURIComponent(email)}` : 'success.html';
     } else {
         // Error
         let errorMessage = 'An error occurred. Please try again.';
