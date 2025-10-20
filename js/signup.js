@@ -261,8 +261,21 @@ async function handleApiResponse(response) {
     if (response.ok) {
         // Success
         const data = await response.json();
-        showMessage('Thank you for signing up! Check your email for next steps.', 'success');
-        resetForm();
+        
+        // Store user email for success page
+        const form = document.getElementById('signup-form');
+        const formData = new FormData(form);
+        const email = formData.get('email').trim();
+        
+        // Store in localStorage
+        try {
+            localStorage.setItem('userEmail', email);
+        } catch (e) {
+            // LocalStorage not available, will use URL parameter
+        }
+        
+        // Redirect to success page
+        window.location.href = `success.html?email=${encodeURIComponent(email)}`;
     } else {
         // Error
         let errorMessage = 'An error occurred. Please try again.';
