@@ -625,7 +625,8 @@ li {
 }
 
 .contact-field.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes fadeIn {
