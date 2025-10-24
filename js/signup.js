@@ -37,6 +37,14 @@ function initializeForm() {
         input.addEventListener('input', () => clearFieldError(input));
     });
     
+    // Add validation listeners to phone field (which may not be required initially)
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput && !phoneInput.dataset.hasListeners) {
+        phoneInput.addEventListener('blur', () => validateField(phoneInput));
+        phoneInput.addEventListener('input', () => clearFieldError(phoneInput));
+        phoneInput.dataset.hasListeners = 'true';
+    }
+    
     // Initialize toggle functionality
     initializeToggle();
     
@@ -152,6 +160,14 @@ function switchContactField(method) {
         emailInput.required = false;
         emailInput.value = ''; // Clear email field
         clearFieldError(emailInput);
+        
+        // Ensure phone input has validation listeners
+        // (only add if not already added to prevent duplicates)
+        if (!phoneInput.dataset.hasListeners) {
+            phoneInput.addEventListener('blur', () => validateField(phoneInput));
+            phoneInput.addEventListener('input', () => clearFieldError(phoneInput));
+            phoneInput.dataset.hasListeners = 'true';
+        }
     }
 }
 
@@ -252,8 +268,10 @@ function validateField(field) {
  * Show field error
  */
 function showFieldError(field, message) {
-    const formGroup = field.closest('.form-group');
-    const errorElement = formGroup.querySelector('.field-error');
+    // For email/phone fields inside contact-field containers
+    const contactField = field.closest('.contact-field');
+    const container = contactField || field.closest('.form-group');
+    const errorElement = container.querySelector('.field-error');
     
     field.classList.add('error');
     if (errorElement) {
@@ -266,8 +284,10 @@ function showFieldError(field, message) {
  * Clear field error
  */
 function clearFieldError(field) {
-    const formGroup = field.closest('.form-group');
-    const errorElement = formGroup.querySelector('.field-error');
+    // For email/phone fields inside contact-field containers
+    const contactField = field.closest('.contact-field');
+    const container = contactField || field.closest('.form-group');
+    const errorElement = container.querySelector('.field-error');
     
     field.classList.remove('error');
     if (errorElement) {
