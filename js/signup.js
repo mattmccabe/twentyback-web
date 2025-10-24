@@ -9,6 +9,11 @@ const TURNSTILE_SITE_KEY = '0x4AAAAAAB7dgfag8YlmtqST';
 // State management
 let turnstileToken = null;
 let isSubmitting = false;
+let signupMethod = 'email'; // 'email' or 'phone'
+let fieldData = {
+    email: '',
+    phone: ''
+};
 
 // Initialize form when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,6 +36,20 @@ function initializeForm() {
         input.addEventListener('blur', () => validateField(input));
         input.addEventListener('input', () => clearFieldError(input));
     });
+    
+    // Add validation listeners to phone field (which may not be required initially)
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput && !phoneInput.dataset.hasListeners) {
+        phoneInput.addEventListener('blur', () => validateField(phoneInput));
+        phoneInput.addEventListener('input', () => clearFieldError(phoneInput));
+        phoneInput.dataset.hasListeners = 'true';
+    }
+    
+    // Initialize toggle functionality
+    initializeToggle();
+    
+    // Initialize phone formatting
+    initializePhoneFormatting();
     
     // Initialize Turnstile widget
     if (typeof turnstile !== 'undefined') {
@@ -55,6 +74,100 @@ function initializeForm() {
                 console.error('Turnstile failed to load. Please check your internet connection and refresh the page.');
             }
         }, 2000);
+    }
+}
+
+/**
+ * Initialize toggle functionality
+ */
+function initializeToggle() {
+    const toggleButtons = document.querySelectorAll('.toggle-option');
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', handleToggleChange);
+    });
+}
+
+/**
+ * Handle toggle change between email and phone
+ */
+function handleToggleChange(event) {
+    const newMethod = event.currentTarget.dataset.method;
+    
+    if (newMethod === signupMethod) return;
+    
+    // Check if user has entered data in current field
+    const currentField = document.getElementById(signupMethod);
+    if (currentField && currentField.value.trim()) {
+        if (!confirm('Switching will clear the current field. Continue?')) {
+            return;
+        }
+    }
+    
+    // Store current data before switching
+    if (currentField) {
+        fieldData[signupMethod] = currentField.value;
+    }
+    
+    // Update state
+    signupMethod = newMethod;
+    
+    // Update UI
+    updateToggleUI(newMethod);
+    switchContactField(newMethod);
+    
+    // Focus new field
+    const newField = document.getElementById(newMethod);
+    if (newField) {
+        newField.focus();
+    }
+}
+
+/**
+ * Update toggle button UI
+ */
+function updateToggleUI(method) {
+    const toggleButtons = document.querySelectorAll('.toggle-option');
+    toggleButtons.forEach(button => {
+        if (button.dataset.method === method) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+/**
+ * Switch between email and phone contact fields
+ */
+function switchContactField(method) {
+    const emailField = document.getElementById('email-field');
+    const phoneField = document.getElementById('phone-field');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    
+    if (method === 'email') {
+        emailField.classList.add('active');
+        phoneField.classList.remove('active');
+        emailInput.required = true;
+        phoneInput.required = false;
+        phoneInput.value = ''; // Clear phone field
+        clearFieldError(phoneInput);
+    } else {
+        phoneField.classList.add('active');
+        emailField.classList.remove('active');
+        phoneInput.required = true;
+        emailInput.required = false;
+        emailInput.value = ''; // Clear email field
+        clearFieldError(emailInput);
+        
+        // Ensure phone input has validation listeners
+        // (only add if not already added to prevent duplicates)
+        if (!phoneInput.dataset.hasListeners) {
+            phoneInput.addEventListener('blur', () => validateField(phoneInput));
+            phoneInput.addEventListener('input', () => clearFieldError(phoneInput));
+            phoneInput.dataset.hasListeners = 'true';
+        }
     }
 }
 
@@ -114,6 +227,25 @@ function validateField(field) {
         }
     }
     
+    // Phone validation
+    if (fieldName === 'phone' && value) {
+        // Remove all non-digit characters for validation
+        const phoneDigits = value.replace(/\D/g, '');
+        
+        // US/International phone validation (10-15 digits)
+        if (phoneDigits.length < 10 || phoneDigits.length > 15) {
+            isValid = false;
+            errorMessage = 'Please enter a valid phone number';
+        }
+        
+        // Additional format validation
+        const phoneRegex = /^[\+]?[1-9][\d]{0,14}$/;
+        if (!phoneRegex.test(phoneDigits)) {
+            isValid = false;
+            errorMessage = 'Please enter a valid phone number';
+        }
+    }
+    
     // Name validation (letters, spaces, hyphens, apostrophes, periods)
     if ((fieldName === 'firstName' || fieldName === 'lastName') && value) {
         const nameRegex = /^[a-zA-Z\s\-'.]+$/;
@@ -136,8 +268,10 @@ function validateField(field) {
  * Show field error
  */
 function showFieldError(field, message) {
-    const formGroup = field.closest('.form-group');
-    const errorElement = formGroup.querySelector('.field-error');
+    // For email/phone fields inside contact-field containers
+    const contactField = field.closest('.contact-field');
+    const container = contactField || field.closest('.form-group');
+    const errorElement = container.querySelector('.field-error');
     
     field.classList.add('error');
     if (errorElement) {
@@ -150,13 +284,42 @@ function showFieldError(field, message) {
  * Clear field error
  */
 function clearFieldError(field) {
-    const formGroup = field.closest('.form-group');
-    const errorElement = formGroup.querySelector('.field-error');
+    // For email/phone fields inside contact-field containers
+    const contactField = field.closest('.contact-field');
+    const container = contactField || field.closest('.form-group');
+    const errorElement = container.querySelector('.field-error');
     
     field.classList.remove('error');
     if (errorElement) {
         errorElement.textContent = '';
         errorElement.style.display = 'none';
+    }
+}
+
+/**
+ * Format phone number as user types
+ */
+function formatPhoneNumber(input) {
+    // Remove all non-digit characters
+    let value = input.value.replace(/\D/g, '');
+    
+    // Apply US phone format: (xxx) xxx-xxxx
+    if (value.length >= 6) {
+        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+    } else if (value.length >= 3) {
+        value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+    }
+    
+    input.value = value;
+}
+
+/**
+ * Initialize phone formatting
+ */
+function initializePhoneFormatting() {
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', () => formatPhoneNumber(phoneInput));
     }
 }
 
@@ -203,12 +366,18 @@ async function handleFormSubmit(event) {
     const formData = new FormData(form);
     
     const signupData = {
-        email: formData.get('email').trim(),
         firstName: formData.get('firstName').trim(),
         lastName: formData.get('lastName')?.trim() || undefined,
         company: formData.get('company')?.trim() || undefined,
         captcha: turnstileToken
     };
+    
+    // Add email or phone based on signup method
+    if (signupMethod === 'email') {
+        signupData.email = formData.get('email').trim();
+    } else {
+        signupData.phone = formData.get('phone').trim();
+    }
     
     // Submit form
     await submitForm(signupData);
@@ -262,23 +431,30 @@ async function handleApiResponse(response) {
         // Success
         const data = await response.json();
         
-        // Store user email for success page
+        // Store user contact info for success page
         const form = document.getElementById('signup-form');
         const formData = new FormData(form);
-        const email = formData.get('email').trim();
+        const contact = signupMethod === 'email' 
+            ? formData.get('email').trim() 
+            : formData.get('phone').trim();
         
         // Store in localStorage (preferred method)
         let useUrlParam = false;
         try {
-            localStorage.setItem('userEmail', email);
+            if (signupMethod === 'email') {
+                localStorage.setItem('userEmail', contact);
+            } else {
+                localStorage.setItem('userPhone', contact);
+            }
         } catch (e) {
             // LocalStorage not available, will use URL parameter as fallback
             useUrlParam = true;
         }
         
         // Redirect to success page
-        // Only include email in URL if localStorage is not available
-        window.location.href = useUrlParam ? `success.html?email=${encodeURIComponent(email)}` : 'success.html';
+        // Only include contact in URL if localStorage is not available
+        const paramName = signupMethod === 'email' ? 'email' : 'phone';
+        window.location.href = useUrlParam ? `success.html?${paramName}=${encodeURIComponent(contact)}` : 'success.html';
     } else {
         // Error
         let errorMessage = 'An error occurred. Please try again.';
@@ -293,7 +469,9 @@ async function handleApiResponse(response) {
         }
         
         if (response.status === 409) {
-            errorMessage = 'This email is already registered.';
+            errorMessage = signupMethod === 'email' 
+                ? 'This email is already registered.' 
+                : 'This phone number is already registered.';
         } else if (response.status === 400) {
             errorMessage = 'Please check your information and try again.';
         } else if (response.status >= 500) {
@@ -342,6 +520,12 @@ function resetForm() {
     // Clear all field errors
     const fields = form.querySelectorAll('input');
     fields.forEach(field => clearFieldError(field));
+    
+    // Reset to email method
+    signupMethod = 'email';
+    fieldData = { email: '', phone: '' };
+    updateToggleUI('email');
+    switchContactField('email');
     
     // Reset Turnstile
     if (typeof turnstile !== 'undefined') {
