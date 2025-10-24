@@ -37,21 +37,62 @@
 
             <!-- Signup Form -->
             <form id="signup-form" class="signup-form" novalidate>
-                <!-- Email Field -->
+                <!-- Toggle Component -->
                 <div class="form-group">
-                    <label for="email" class="form-label">
-                        Email Address<span class="required">*</span>
-                    </label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="form-input" 
-                        placeholder="your.email@example.com"
-                        required
-                        autocomplete="email"
-                    />
-                    <span class="field-error"></span>
+                    <div class="signup-method-toggle">
+                        <button type="button" class="toggle-option active" data-method="email">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.5 5.83333C2.5 4.91286 3.24619 4.16667 4.16667 4.16667H15.8333C16.7538 4.16667 17.5 4.91286 17.5 5.83333V14.1667C17.5 15.0871 16.7538 15.8333 15.8333 15.8333H4.16667C3.24619 15.8333 2.5 15.0871 2.5 14.1667V5.83333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2.5 5.83333L10 10.8333L17.5 5.83333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Email Address
+                        </button>
+                        <button type="button" class="toggle-option" data-method="phone">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.33333 4.16667C3.33333 3.24619 4.07953 2.5 5 2.5H6.89516C7.29951 2.5 7.65635 2.75607 7.78676 3.13866L8.99566 6.74414C9.13671 7.15851 8.98551 7.61656 8.63101 7.85675L7.15555 8.87092C7.99648 10.6114 9.38864 12.0035 11.1291 12.8445L12.1432 11.369C12.3834 11.0145 12.8415 10.8633 13.2559 11.0043L16.8613 12.2132C17.2439 12.3437 17.5 12.7005 17.5 13.1048V15C17.5 15.9205 16.7538 16.6667 15.8333 16.6667H15C8.55635 16.6667 3.33333 11.4437 3.33333 5V4.16667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Phone Number
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Contact Field Container -->
+                <div class="form-group">
+                    <div id="contact-field-container">
+                        <!-- Email Field (default) -->
+                        <div id="email-field" class="contact-field active">
+                            <label for="email" class="form-label">
+                                Email Address<span class="required">*</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="your.email@example.com"
+                                required
+                                autocomplete="email"
+                            />
+                            <span class="field-error"></span>
+                        </div>
+                        
+                        <!-- Phone Field (hidden by default) -->
+                        <div id="phone-field" class="contact-field">
+                            <label for="phone" class="form-label">
+                                Phone Number<span class="required">*</span>
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="form-input" 
+                                placeholder="+1 (555) 123-4567"
+                                autocomplete="tel"
+                            />
+                            <span class="field-error"></span>
+                            <span class="field-hint">We'll send a verification code to this number</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- First Name Field -->
