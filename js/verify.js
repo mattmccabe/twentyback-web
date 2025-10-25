@@ -3,7 +3,7 @@
 // Configuration
 const API_ENDPOINTS = {
     VERIFY: 'https://api.twentyback.com/api/auth/verify',
-    RESEND: 'https://api.twentyback.com/api/auth/resend-verification',
+    RESEND: 'https://api.twentyback.com/api/resend',
     CHANGE_METHOD: 'https://api.twentyback.com/api/auth/change-verification-method'
 };
 
@@ -130,8 +130,7 @@ function getContentForMethod(method) {
             resendText: "Resend Email",
             changeMethodText: "Use Phone Instead",
             icon: `<svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.5 5.83333C2.5 4.91286 3.24619 4.16667 4.16667 4.16667H15.8333C16.7538 4.16667 17.5 4.91286 17.5 5.83333V14.1667C17.5 15.0871 16.7538 15.8333 15.8333 15.8333H4.16667C3.24619 15.8333 2.5 15.0871 2.5 14.1667V5.83333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2.5 5.83333L10 10.8333L17.5 5.83333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.83333 9.16667V6.66667C5.83333 4.36548 7.69881 2.5 10 2.5C12.3012 2.5 14.1667 4.36548 14.1667 6.66667V9.16667M10 11.6667V13.3333M6.66667 17.5H13.3333C14.2538 17.5 15 16.7538 15 15.8333V10.8333C15 9.91286 14.2538 9.16667 13.3333 9.16667H6.66667C5.74619 9.16667 5 9.91286 5 10.8333V15.8333C5 16.7538 5.74619 17.5 6.66667 17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>`
         },
         phone: {
@@ -141,7 +140,7 @@ function getContentForMethod(method) {
             resendText: "Resend SMS",
             changeMethodText: "Use Email Instead", 
             icon: `<svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.33333 4.16667C3.33333 3.24619 4.07953 2.5 5 2.5H6.89516C7.29951 2.5 7.65635 2.75607 7.78676 3.13866L8.99566 6.74414C9.13671 7.15851 8.98551 7.61656 8.63101 7.85675L7.15555 8.87092C7.99648 10.6114 9.38864 12.0035 11.1291 12.8445L12.1432 11.369C12.3834 11.0145 12.8415 10.8633 13.2559 11.0043L16.8613 12.2132C17.2439 12.3437 17.5 12.7005 17.5 13.1048V15C17.5 15.9205 16.7538 16.6667 15.8333 16.6667H15C7.63614 16.6667 1.66666 10.6971 1.66666 3.33333V2.5C1.66666 1.57953 2.41286 0.833328 3.33333 0.833328H5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.83333 9.16667V6.66667C5.83333 4.36548 7.69881 2.5 10 2.5C12.3012 2.5 14.1667 4.36548 14.1667 6.66667V9.16667M10 11.6667V13.3333M6.66667 17.5H13.3333C14.2538 17.5 15 16.7538 15 15.8333V10.8333C15 9.91286 14.2538 9.16667 13.3333 9.16667H6.66667C5.74619 9.16667 5 9.91286 5 10.8333V15.8333C5 16.7538 5.74619 17.5 6.66667 17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>`
         }
     };
