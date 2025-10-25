@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Account - TwentyBack</title>
+    <meta name="description" content="Verify your TwentyBack account to complete registration and access your automation dashboard.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Prevent form auto-submission on mobile -->
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="verification-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div>
+                <h1 class="logo">TwentyBack</h1>
+            </div>
+            <div class="nav-actions">
+                <a href="signup.html" class="btn btn-secondary">Back to Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Verification Section -->
+    <section class="verification-container">
+        <div class="verification-box">
+            <!-- Verification Header -->
+            <div class="verification-header">
+                <div class="verification-icon">
+                    <!-- Padlock icon for security and trust -->
+                    <svg id="verification-method-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.83333 9.16667V6.66667C5.83333 4.36548 7.69881 2.5 10 2.5C12.3012 2.5 14.1667 4.36548 14.1667 6.66667V9.16667M10 11.6667V13.3333M6.66667 17.5H13.3333C14.2538 17.5 15 16.7538 15 15.8333V10.8333C15 9.91286 14.2538 9.16667 13.3333 9.16667H6.66667C5.74619 9.16667 5 9.91286 5 10.8333V15.8333C5 16.7538 5.74619 17.5 6.66667 17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 id="verification-title">Verify Your Account</h1>
+                <p id="verification-subtitle" class="subtitle">
+                    We've sent a 6-digit verification code to your email address
+                </p>
+            </div>
+
+            <!-- Verification Code Form -->
+            <form id="verification-form" class="verification-form" novalidate>
+                <!-- Code Input Section -->
+                <div class="form-group">
+                    <label for="verification-code-input" class="form-label">
+                        Verification Code<span class="required">*</span>
+                    </label>
+                    <div class="code-input-container">
+                        <!-- 6-digit code input with individual boxes -->
+                        <input type="text" class="code-digit" maxlength="1" pattern="[0-9]" autocomplete="one-time-code" inputmode="numeric">
+                        <input type="text" class="code-digit" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                        <input type="text" class="code-digit" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                        <input type="text" class="code-digit" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                        <input type="text" class="code-digit" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                        <input type="text" class="code-digit" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                    </div>
+                    <span class="field-error" id="code-error"></span>
+                    <span class="field-hint" id="code-hint">
+                        Check your spam folder if you don't see the email
+                    </span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="verify-button" class="submit-button" disabled>
+                    <span class="button-text">Verify Account</span>
+                    <span class="button-spinner"></span>
+                </button>
+
+                <!-- Resend Options -->
+                <div class="resend-section">
+                    <p class="resend-text">Didn't receive a code?</p>
+                    <div class="resend-actions">
+                        <button type="button" id="resend-button" class="btn-link" disabled>
+                            <span id="resend-text">Resend Code</span>
+                            <span id="resend-timer"></span>
+                        </button>
+                        <!-- Option to change verification method -->
+                        <button type="button" id="change-method-button" class="btn-link">
+                            Try Different Method
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Alternative Actions -->
+            <div class="alternative-actions">
+                <div class="help-section">
+                    <p>Having trouble?</p>
+                    <a href="mailto:support@twentyback.com" class="support-link">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>TwentyBack</h3>
+                    <p>Automate. Focus. Grow.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TwentyBack. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/verify.js"></script>
+</body>
+</html>
