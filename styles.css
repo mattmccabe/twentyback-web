@@ -1500,5 +1500,102 @@ li {
     
     .code-digit:focus {
         box-shadow: 0 0 0 3px black;
+
+/* Feather Icons Custom Styles */
+
+/* Inline icons for text */
+.inline-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+    stroke-width: 2;
+}
+
+/* Text color variants for inline icons */
+.text-red {
+    color: #dc2626;
+}
+
+.text-green {
+    color: var(--brand-green);
+}
+
+/* Star rating styles */
+.star-rating {
+    display: inline-flex;
+    gap: 2px;
+    margin-right: 8px;
+}
+
+.star-filled {
+    width: 16px;
+    height: 16px;
+    fill: #fbbf24;
+    stroke: #fbbf24;
+    stroke-width: 1;
+}
+
+/* Feature icons sizing */
+.feature-icon i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
+/* Benefit icons sizing */
+.benefit-icon i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
+/* Timeline marker icons */
+.timeline-marker i {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+/* Resource icons */
+.resource-icon i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
+/* Support icons */
+.support-icon i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+}
+
+/* Success page main icon */
+.success-icon i {
+    width: 64px;
+    height: 64px;
+    stroke-width: 1.5;
+    color: var(--brand-green);
+}
+
+/* Toggle button icons */
+.toggle-option i {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    stroke-width: 1.5;
+}
+
+/* Responsive adjustments for icons */
+@media (max-width: 768px) {
+    .success-icon i {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .timeline-marker i {
+        width: 16px;
+        height: 16px;
     }
 }

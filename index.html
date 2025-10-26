@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TwentyBack Beta - Reclaim 10 Hours a Week</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -48,7 +49,7 @@
             <div class="before-after">
                 <!-- Before Card -->
                 <div class="before-card">
-                    <h3>❌ Before TwentyBack</h3>
+                    <h3><i data-feather="x-circle" class="inline-icon text-red"></i> Before TwentyBack</h3>
                     <ul>
                         <li>• Hours spent on phone tag for scheduling</li>
                         <li>• Delayed responses losing customers</li>
@@ -61,7 +62,7 @@
                 <div class="arrow">→</div>
 
                 <div class="after-card">
-                    <h3>✅ After TwentyBack</h3>
+                    <h3><i data-feather="check-circle" class="inline-icon text-green"></i> After TwentyBack</h3>
                     <ul>
                         <li>• Automated scheduling eliminates phone tag</li>
                         <li>• Instant 24/7 responses to inquiries</li>
@@ -75,19 +76,25 @@
             <!-- Feature Details -->
             <div class="feature-grid">
                 <div class="feature-item">
-                    <div class="feature-icon blue">📄</div>
+                    <div class="feature-icon blue">
+                        <i data-feather="file-text"></i>
+                    </div>
                     <h3>Smart Quotes (Beta)</h3>
                     <p>We're perfecting instant automated responses to quote requests. Help us refine professional templates and pricing guidelines based on your real-world needs.</p>
                 </div>
 
                 <div class="feature-item">
-                    <div class="feature-icon green">📅</div>
+                    <div class="feature-icon green">
+                        <i data-feather="calendar"></i>
+                    </div>
                     <h3>Auto Scheduling (In Development)</h3>
                     <p>Beta testers are helping us optimize direct calendar booking and reminder systems. Early results show potential for 60% reduction in no-shows.</p>
                 </div>
 
                 <div class="feature-item">
-                    <div class="feature-icon orange">📧</div>
+                    <div class="feature-icon orange">
+                        <i data-feather="mail"></i>
+                    </div>
                     <h3>Smart Follow-ups (Coming Soon)</h3>
                     <p>Join our beta to help design automated sequences for reviews, referrals, and repeat business. Your feedback shapes this feature.</p>
                 </div>
@@ -113,7 +120,16 @@
                         </div>
                     </div>
                     <p class="testimonial-content">"Being part of the TwentyBack beta has been incredible. Even in early development, I'm already saving 8+ hours per week. My feedback is actually shaping features that will help thousands of service pros like me."</p>
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ Early Beta Tester</div>
+                    <div class="testimonial-rating">
+                        <div class="star-rating">
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                        </div>
+                        Early Beta Tester
+                    </div>
                 </div>
 
                 <div class="testimonial-card">
@@ -125,7 +141,16 @@
                         </div>
                     </div>
                     <p class="testimonial-content">"I love being an early adopter! The TwentyBack team listens to every suggestion. I'm helping build something that will revolutionize how we run our businesses. Plus, I get lifetime benefits as a founding user."</p>
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ Founding User Benefits</div>
+                    <div class="testimonial-rating">
+                        <div class="star-rating">
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                        </div>
+                        Founding User Benefits
+                    </div>
                 </div>
 
                 <div class="testimonial-card">
@@ -137,7 +162,16 @@
                         </div>
                     </div>
                     <p class="testimonial-content">"The beta program gives me direct access to the development team. When I suggested a feature for handyman-specific workflows, they built it within weeks. This is the future of service automation."</p>
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐ Feature Contributor</div>
+                    <div class="testimonial-rating">
+                        <div class="star-rating">
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                            <i data-feather="star" class="star-filled"></i>
+                        </div>
+                        Feature Contributor
+                    </div>
                 </div>
             </div>
         </div>
@@ -250,5 +284,9 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
