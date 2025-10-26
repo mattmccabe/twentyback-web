@@ -365,23 +365,26 @@ body {
 }
 
 .phrase-icon {
-    width: 60px;
-    height: 60px;
     border-radius: 50%;
+    width: 96px;
+    height: 96px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 0 auto 24px auto;
 }
 
-.phrase-icon.blue { background: var(--brand-blue); }
-.phrase-icon.green { background: var(--brand-green); }
-.phrase-icon.orange { background: var(--brand-orange); }
+.phrase-icon .feather {
+    width: 32px;
+    height: 32px;
+}
+
+.phrase-icon.blue { color: var(--brand-blue); }
+.phrase-icon.green { color: var(--brand-green); }
+.phrase-icon.orange { color: var(--brand-orange); }
 
 .phrase-icon i {
     color: white;
-    width: 24px;
-    height: 24px;
 }
 
 .phrase-content {
