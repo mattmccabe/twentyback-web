@@ -441,6 +441,7 @@ async function handleApiResponse(response) {
         // Store in localStorage (preferred method)
         let useUrlParam = false;
         try {
+            localStorage.setItem('sessionToken', data.sessionToken);
 
             localStorage.setItem('verifyToken', data.verifyToken);
 

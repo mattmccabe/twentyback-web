@@ -436,21 +436,18 @@ async function submitVerificationCode(code) {
         
         // Prepare request data
         const requestData = {
-            method: verificationState.method,
             code: code,
-            contact: verificationState.contact
+            token: verificationState.token
         };
-        
-        // Add token for direct email verification
-        if (verificationState.token) {
-            requestData.token = verificationState.token;
-        }
+
+        const sessionToken = localStorage.getItem('sessionToken') || sessionStorage.getItem('sessionToken');
         
         // Make API call
         const response = await fetch(API_ENDPOINTS.VERIFY, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                Authorization: `Bearer ${sessionToken}`
             },
             body: JSON.stringify(requestData)
         });
