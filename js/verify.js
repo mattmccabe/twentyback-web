@@ -18,7 +18,6 @@ const CONFIG = {
 // State management
 let verificationState = {
     method: 'email', // 'email' or 'phone'
-    contact: '', // user's email or phone
     token: null, // verification token for email links
     code: '', // current entered code
     attempts: 0,
@@ -51,11 +50,6 @@ function initializeVerificationPage() {
     // Start resend cooldown if applicable
     startResendCooldown();
     
-    // Handle direct token verification (email links)
-    if (verificationState.token) {
-        handleDirectTokenVerification();
-    }
-    
     // Setup accessibility features
     setupAccessibility();
 }
@@ -66,31 +60,31 @@ function initializeVerificationPage() {
 function parseUrlParameters() {
     const urlParams = new URLSearchParams(window.location.search);
     
-    // Get verification method
-    verificationState.method = urlParams.get('method') || 'email';
-    
-    // Get contact info (fallback)
-    verificationState.contact = urlParams.get('contact') || getUserContactFromStorage();
-    
     // Get verification token (for direct email verification)
-    verificationState.token = urlParams.get('token');
-    
-    // Validate parameters
-    if (!['email', 'phone'].includes(verificationState.method)) {
-        verificationState.method = 'email';
-    }
+    verificationState.token = urlParams.get('token') || getTokenFromStorage();
+
+    // Get Method from URL or localstorage
+    verificationState.method = urlParams.get('method') || getMethodFromStorage();
 }
 
 /**
  * Get user contact info from localStorage or sessionStorage
  */
-function getUserContactFromStorage() {
+function getTokenFromStorage() {
     try {
-        if (verificationState.method === 'email') {
-            return localStorage.getItem('userEmail') || sessionStorage.getItem('userEmail') || '';
-        } else {
-            return localStorage.getItem('userPhone') || sessionStorage.getItem('userPhone') || '';
-        }
+        return localStorage.getItem('verifyToken') || sessionStorage.getItem('verifyToken') || '';
+    } catch (e) {
+        return '';
+    }
+}
+
+/**
+ * Get verification method from localStorage or sessionStorage
+ * @returns {string} method - 'email' or 'phone'
+ */
+function getMethodFromStorage() {
+    try {
+        return localStorage.getItem('method') || sessionStorage.getItem('method') || '';
     } catch (e) {
         return '';
     }
@@ -105,7 +99,7 @@ function setupPageContent() {
     // Update page elements
     document.getElementById('verification-title').textContent = content.title;
     document.getElementById('verification-subtitle').textContent = 
-        content.subtitle + (verificationState.contact ? ` (${maskContact(verificationState.contact)})` : '');
+        content.subtitle;
     document.getElementById('code-hint').textContent = content.hint;
     document.getElementById('resend-text').textContent = content.resendText;
     document.getElementById('change-method-button').textContent = content.changeMethodText;
@@ -146,31 +140,6 @@ function getContentForMethod(method) {
     };
     
     return content[method] || content.email;
-}
-
-/**
- * Mask contact information for privacy
- */
-function maskContact(contact) {
-    if (!contact) return '';
-    
-    if (verificationState.method === 'email') {
-        const [username, domain] = contact.split('@');
-        if (username && domain) {
-            const maskedUsername = username.length > 2 
-                ? username.substring(0, 2) + '*'.repeat(username.length - 2)
-                : username;
-            return `${maskedUsername}@${domain}`;
-        }
-    } else {
-        // Phone number masking
-        const digits = contact.replace(/\D/g, '');
-        if (digits.length >= 10) {
-            return `***-***-${digits.slice(-4)}`;
-        }
-    }
-    
-    return contact;
 }
 
 /**

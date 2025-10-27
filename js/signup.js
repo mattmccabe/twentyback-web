@@ -441,6 +441,11 @@ async function handleApiResponse(response) {
         // Store in localStorage (preferred method)
         let useUrlParam = false;
         try {
+
+            localStorage.setItem('verifyToken', data.verifyToken);
+
+            localStorage.setItem('method', data.method);
+
             if (signupMethod === 'email') {
                 localStorage.setItem('userEmail', contact);
             } else {
@@ -450,11 +455,11 @@ async function handleApiResponse(response) {
             // LocalStorage not available, will use URL parameter as fallback
             useUrlParam = true;
         }
-        
+
         // Redirect to success page
         // Only include contact in URL if localStorage is not available
-        const paramName = signupMethod === 'email' ? 'email' : 'phone';
-        window.location.href = useUrlParam ? `success.html?${paramName}=${encodeURIComponent(contact)}` : 'success.html';
+        const paramName = 'token';
+        window.location.href = useUrlParam ? `verify.html?${paramName}=${encodeURIComponent(data.verifyToken)}&method=${encodeURIComponent(signupMethod)}` : 'verify.html';
     } else {
         // Error
         let errorMessage = 'An error occurred. Please try again.';
