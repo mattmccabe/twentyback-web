@@ -616,6 +616,18 @@ li {
 }
 
 /* Toggle Component Styles */
+.signup-method-instructions {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.signup-method-instructions p {
+    color: #6B7280;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+}
+
 .signup-method-toggle {
     display: flex;
     background: #f8f9fa;
